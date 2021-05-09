@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const STATIC_FOLDER = "public";
 const SOURCE_FOLDER = "src";
+// const BASE_DIR  = "//..//..//";
+const BASE_DIR  = __dirname;
 
 var getWebpackConfig = (options) => {
   return {
@@ -11,14 +13,14 @@ var getWebpackConfig = (options) => {
     mode: options.mode,
     // dev server: defines the port, compression and the "public" folder
     devServer: {
-      contentBase: path.join(__dirname, STATIC_FOLDER),
+      contentBase: path.join(BASE_DIR, STATIC_FOLDER),
       compress: true,
       port: 5000,
       historyApiFallback: true, // <---- push history fallback
     },
     // entry file: all resources (e.g. css) must be included here
     entry: {
-      app: path.join(__dirname, SOURCE_FOLDER, "index.tsx"),
+      app: path.join(BASE_DIR, SOURCE_FOLDER, "index.tsx"),
     },
     target: "web",
     resolve: {
@@ -63,7 +65,7 @@ var getWebpackConfig = (options) => {
         {
           test: /\.(png|jpe?g|gif)$/,
           loader: "url-loader?limit=8000&name=images/[name].[ext]",
-          include: path.join(__dirname, "public"),
+          include: path.join(BASE_DIR, "public"),
         },
       ],
     },
@@ -71,7 +73,7 @@ var getWebpackConfig = (options) => {
     output: {
       publicPath: "/", // <---- push history fallback
       filename: "[name].js",
-      path: path.resolve(__dirname, STATIC_FOLDER),
+      path: path.resolve(BASE_DIR, STATIC_FOLDER),
     },
     // dev tools for source maps (none or source map)
     devtool: options.devtool,
@@ -81,7 +83,7 @@ var getWebpackConfig = (options) => {
       //   patterns: [{ from: "./" + SOURCE_FOLDER + "/Images", to: "Images" }],
       // }),
       new HtmlWebpackPlugin({
-        template: __dirname + "/" + SOURCE_FOLDER + "/index.html",
+        template: BASE_DIR + "/" + SOURCE_FOLDER + "/index.html",
         filename: "index.html",
         inject: "body",
         hash: true,
