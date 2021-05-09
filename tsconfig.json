@@ -2,12 +2,25 @@
     "compilerOptions": {
       "module": "commonjs",
       "esModuleInterop": true,
-      "target": "es6",
+      "target": "es5",
       "moduleResolution": "node",
       "sourceMap": true,
       "outDir": "bin",
+      "jsx": "react",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true
     },
     "lib": ["es2015"]
 }
+// {
+//   "compilerOptions": {
+//     "outDir": "./dist",
+//     "target": "es5",
+//     "sourceMap": true,
+//     "moduleResolution": "node",
+//     "module": "es6",
+//     "jsx": "react",
+//     "noImplicitAny": true,
+//     "allowSyntheticDefaultImports": true
+//   }
+// }
