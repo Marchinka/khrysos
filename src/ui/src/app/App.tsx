@@ -16,6 +16,9 @@ import ConfirmationDialog, { ConfirmationOptions } from "./components/utils/Conf
 import MainContext, { IMainContext } from "./contexts/MainContext";
 import Feedback from "./components/utils/Feedback";
 import MainLoader from "./components/utils/MainLoader";
+import { BottomNavigation } from "@material-ui/core";
+import AppNavigation from "./components/utils/AppNavigation";
+import AppLayout from "./components/utils/AppLayout";
 
 const store = createStore(RootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
@@ -45,16 +48,16 @@ export default () => {
                 <Provider store={store}>
                     <ThemeProvider theme={theme}>
                         <Router history={AppHistory()}>
-                            <div className="hotspot">
-                                <header>
+                            <AppLayout title="Criso" >
+                                <div>
                                     <Link to={INBOX_ROUTE}>Inbox</Link> |
                                     <Link to={CREATE_PROJECT_ROUTE}>Create</Link> 
-                                </header>
-                                <main className="app-body">
+                                </div>
+                                <div className="app-body">
                                     <Route exact path={INBOX_ROUTE} component={Inbox} />
                                     <Route exact path={CREATE_PROJECT_ROUTE} component={CreateProject} />
-                                </main>
-                            </div>
+                                </div>
+                            </AppLayout>
                             <ConfirmationDialog ref={confirmationDialog} />
                             <Feedback ref={feedback} />
                             <MainLoader ref={mainLoader}/>

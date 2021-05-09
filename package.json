@@ -22,29 +22,5 @@
     "typeorm": "^0.2.32",
     "typescript": "^4.2.4"
   },
-  "devDependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/lab": "^4.0.0-alpha.58",
-    "@types/node": "^15.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.4",
-    "react-router-dom": "^5.2.0",
-    "redux": "^4.1.0",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.3.0",
-    "@types/react": "^16.9.32",
-    "@types/react-dom": "^16.9.6",
-    "@types/systemjs": "^6.1.0",
-    "@types/webpack-env": "^1.16.0",
-    "typeorm-model-generator": "^0.4.5",
-    "file-loader": "^6.2.0",
-    "sass": "^1.32.12",
-    "sass-loader": "^11.0.1",
-    "typescript": "^4.1.2",
-    "webpack": "^5.8.0",
-    "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^4.0.0-beta.0",
-    "webpack-merge": "^5.4.0"
-  }
+  "devDependencies": {}
 }
