@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const STATIC_FOLDER = "public";
 const SOURCE_FOLDER = "src";
 // const BASE_DIR  = "//..//..//";
-const BASE_DIR  = __dirname;
+const BASE_DIR  = __dirname; 
 
 var getWebpackConfig = (options) => {
   return {
